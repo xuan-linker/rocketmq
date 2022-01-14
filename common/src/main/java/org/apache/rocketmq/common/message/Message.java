@@ -22,12 +22,28 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 消息类核心字段
+ * ——Linker
+ */
 public class Message implements Serializable {
     private static final long serialVersionUID = 8445773977080406428L;
 
+    /**
+     * 主题名字
+     */
     private String topic;
+    /**
+     * 该版本没用
+     */
     private int flag;
+    /**
+     * 消息拓展信息，Tag、keys、延迟级别属性
+     */
     private Map<String, String> properties;
+    /**
+     * 消息体，字节数组（生产消费者需要使用同一编码）
+     */
     private byte[] body;
     private String transactionId;
 

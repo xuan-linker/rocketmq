@@ -54,6 +54,11 @@ import org.apache.rocketmq.remoting.netty.NettyRemotingClient;
  * and used among multiple threads context.
  * </p>
  */
+
+/**
+ * rocketmq 生產者普通消息、順序消息、單項消息、批量消息、延遲消息。
+ * ——Linker
+ */
 public class DefaultMQProducer extends ClientConfig implements MQProducer {
 
     /**
@@ -106,6 +111,9 @@ public class DefaultMQProducer extends ClientConfig implements MQProducer {
      * </p>
      *
      * This may potentially cause message duplication which is up to application developers to resolve.
+     *
+     * 异步重试次数 默认两次 加上正常发送一次 总共3次
+     * ——Linker
      */
     private int retryTimesWhenSendAsyncFailed = 2;
 

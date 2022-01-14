@@ -590,6 +590,10 @@ public class MQClientAPIImpl {
     ) throws RemotingException, InterruptedException {
         this.remotingClient.invokeAsync(addr, request, timeoutMillis, new InvokeCallback() {
             @Override
+            /**
+             * 异步发送重试代码
+             * ——Linker
+             */
             public void operationComplete(ResponseFuture responseFuture) {
                 RemotingCommand response = responseFuture.getResponseCommand();
                 if (response != null) {

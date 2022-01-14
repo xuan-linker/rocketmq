@@ -22,6 +22,10 @@ import org.apache.rocketmq.remoting.RPCHook;
 
 import java.util.concurrent.ExecutorService;
 
+/**
+ * 生产事务消息
+ * ——Linker
+ */
 public class TransactionMQProducer extends DefaultMQProducer {
     private TransactionListener transactionListener;
 
